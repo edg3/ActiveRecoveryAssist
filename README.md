@@ -91,7 +91,7 @@ Fellow victims of Traumatic Brain Injuries. I spent 8 years on recovery, have ma
 ## Metrics Measure (What numbers are you targeting? E.g. Users, revenue, jobs, etc)
 Everything is mostly pay gated, you can't do it in your own time, in your own way. I'm one who promotes the open public accessible measure for recovery, especially, because not everyone can afford high-cost recoveries. Making it work everywhere, for everyone, with ease, on any device it can - free - will help more where some never even have family or friends to help them.
 
-## Unfair Afvantage (What makes it non-replicable?)
+## Unfair Advantage (What makes it non-replicable?)
 My recovery had a lot paid for, high amounts, I was super lucky. I know how difficult it can be to recover; how difficult it can be to add 2 and 2 together for recovery. The costs for recovery professionally are way too exorbitant and high to help victims even WANT to go for it. With their family in control, the money gets kept from them because they haven't recovered yet, so is in control of the family. It has the detrimental effect that most people don't care about recovery, and try to keep it
 
 ## Distribution Channels (How the solution will get to the hands of users)
