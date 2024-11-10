@@ -52,7 +52,7 @@ Primary: C# (Uno Platform, for V1 on Android and Web) / Azure (Data interop)
 Possibly: Python (ML API, model selection will be difficult) / Asp.NET (Uncertain)
 
 # Lean Business Canvas
-## Problem Statement (Pain points that motivayed this solution)
+## Problem Statement (Pain points that motivated this solution)
 Chatted a bit to copilot got the broad idea started. Using the prompt to ask for suggested full-stack solutions that can help people who need help, it led me to side towards helping someone who suffers from my own disability. Traumatic Brain Injury (TBI) is a difficult problem to ever solve. The goal is to take the suggested sections, and make a full app/service/helper for recovery tasks that seem odd to people who haven't experienced this dissability.
 
 The main suggestions for TBI were:
