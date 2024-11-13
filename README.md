@@ -9,6 +9,7 @@ Team Name: Raptor
 
 ### Team Members
 - Ernest "edg3" - https://edg3.co.za/
+- Nqobile "sparks"
 
 ## Project Name
 ActiveRecoveryAssistant
