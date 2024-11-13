@@ -9,6 +9,9 @@ public partial class MainViewModel : ObservableObject
 
     AzureDb azureDb;
 
+    [ObservableProperty]
+    List<Question> questions = new();
+
     public MainViewModel(
         IStringLocalizer localizer,
         IOptions<AppConfig> appInfo,
@@ -19,6 +22,14 @@ public partial class MainViewModel : ObservableObject
         azureDb = new AzureDb();
 
         GoAsk = new RelayCommand(async () => await GoAskCommand());
+        GetQuestions();
+    }
+
+    public async void GetQuestions()
+    {
+        // TODO: think this one through
+        var qns = ADB.Questions.Where(it => true).ToList();
+        Questions.AddRange(qns);
     }
 
     public ICommand GoAsk { get; }
@@ -27,4 +38,6 @@ public partial class MainViewModel : ObservableObject
     {
         await _navigator.NavigateViewModelAsync<AskViewModel>(this);
     }
+
+    // TODO: update list after you ask a question
 }

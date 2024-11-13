@@ -14,19 +14,20 @@
         Text="What do you need assistance with today?"
         HorizontalAlignment="Center"
         VerticalAlignment="Center"
-        Margin="0,32" />
+        Margin="16" />
       <TextBox
         Text="{Binding Question, Mode=TwoWay}"
         PlaceholderText="Ask me anything"
         HorizontalAlignment="Center"
         VerticalAlignment="Center"
-        Margin="0,64" />
+        Margin="16"
+        TextWrapping="WrapWholeWords" />
       <Button
         Content="Ask"
         Command="{Binding Ask}"
         HorizontalAlignment="Center"
         VerticalAlignment="Center"
-        Margin="0,96" />
+        Margin="16" />
     </StackPanel>
   </Grid>
 </Page>

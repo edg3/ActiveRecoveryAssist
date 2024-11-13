@@ -6,6 +6,8 @@ internal static class ADB
 {
     public static AzureDb? AzureDb { get; internal set; } = null;
 
+    public static DbSet<Question> Questions => AzureDb!.Question;
+
     public static void Add(object obj) => AzureDb!.Add(obj);
     public static void Save() => AzureDb!.SaveChanges();
 }

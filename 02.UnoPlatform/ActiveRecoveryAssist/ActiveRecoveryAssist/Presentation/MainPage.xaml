@@ -23,7 +23,8 @@
           Margin="16" />
         <TextBlock
           Text="Hey there, hope you are doing well today. How can I be of assistance?"
-          TextWrapping="WrapWholeWords" />
+          TextWrapping="WrapWholeWords"
+          Margin="16" />
         <Grid>
           <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -36,6 +37,20 @@
             Grid.Column="1"
             Command="{Binding GoAsk}" />
         </Grid>
+        <ListBox
+          ItemsSource="{Binding Questions, Mode=OneWay}"
+          SelectedItem="{Binding SelectedQuestion, Mode=TwoWay}"
+          SelectionMode="Single"
+          Margin="16">
+          <ListBox.ItemTemplate>
+            <DataTemplate>
+              <TextBlock
+                Text="{Binding}"
+                TextWrapping="WrapWholeWords"
+                Margin="16" />
+            </DataTemplate>
+          </ListBox.ItemTemplate>
+        </ListBox>
       </StackPanel>
 
     </Grid>
