@@ -22,15 +22,14 @@ internal class AzureDb : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer($"Server=tcp:edg3.database.windows.net,1433;Initial Catalog=NaNoEDb;Persist Security Info=False;User ID=edg3;Password=\"{AppConfig.DbPass}\";MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=60;MultipleActiveResultSets=True");
+        optionsBuilder.UseSqlServer($"Server=tcp:edg3.database.windows.net,1433;Initial Catalog=ActiveRecoveryAssist;Persist Security Info=False;User ID=edg3;Password=\"{AppConfig.DbPass}\";MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=60;MultipleActiveResultSets=True");
     }
 
-    //public DbSet<<name>> <name> { get; set; } // This adds the DB set for the named model
+    public DbSet<Question> Question { get; set; } // This adds the DB set for the named model
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        // This sets up the proper interaction
-        //modelBuilder.Entity<<name>>().ToTable("<name>");
-        //modelBuilder.Entity<<name>>().HasKey(n => n.<nameof>ID);
+        modelBuilder.Entity<Question>().ToTable("Question");
+        modelBuilder.Entity<Question>().HasKey(n => n.QuestionID);
     }
 }

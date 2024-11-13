@@ -9,21 +9,11 @@ namespace ActiveRecoveryAssist.Models;
 public abstract class Model
 {
     /// <summary>
-    /// Get the Insert SQL query text
-    /// </summary>
-    /// <returns>@parameterised SQL string</returns>
-    public abstract string InsertSQL();
-    /// <summary>
-    /// Action that uses InsertSQL to get the @parameters string, then adds the parameters and executes the command with ExecuteNonQuery().
+    /// Action that inserts the model to the DB
     /// </summary>
     public abstract void Insert();
     /// <summary>
-    /// Get the Update SQL query text
-    /// </summary>
-    /// <returns>@parameterised SQL string</returns>
-    public abstract string UpdateSQL();
-    /// <summary>
-    /// Action that uses UpdateSQL to get the @parameters string, then adds the parameters and executes the command with ExecuteNonQuery().
+    /// Action that uses updates the model in the FB
     /// </summary>
     public abstract void Update();
 }
