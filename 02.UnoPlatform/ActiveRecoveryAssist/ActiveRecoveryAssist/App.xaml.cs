@@ -95,14 +95,16 @@ public partial class App : Application
     {
         views.Register(
             new ViewMap(ViewModel: typeof(ShellViewModel)),
-            new ViewMap<MainPage, MainViewModel>()
+            new ViewMap<MainPage, MainViewModel>(),
+            new ViewMap<AskPage, AskViewModel>()
         );
 
         routes.Register(
             new RouteMap("", View: views.FindByViewModel<ShellViewModel>(),
                 Nested:
                 [
-                    new ("Main", View: views.FindByViewModel<MainViewModel>(), IsDefault:true)
+                    new ("Main", View: views.FindByViewModel<MainViewModel>(), IsDefault:true),
+                    new ("Ask", View: views.FindByViewModel<AskViewModel>())
                 ]
             )
         );

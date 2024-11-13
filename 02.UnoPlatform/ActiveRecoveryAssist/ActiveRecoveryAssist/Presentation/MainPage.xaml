@@ -24,6 +24,18 @@
         <TextBlock
           Text="Hey there, hope you are doing well today. How can I be of assistance?"
           TextWrapping="WrapWholeWords" />
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="64" />
+          </Grid.ColumnDefinitions>
+
+          <Button
+            Content="Ask"
+            Grid.Column="1"
+            Command="{Binding GoAsk}" />
+        </Grid>
       </StackPanel>
 
     </Grid>

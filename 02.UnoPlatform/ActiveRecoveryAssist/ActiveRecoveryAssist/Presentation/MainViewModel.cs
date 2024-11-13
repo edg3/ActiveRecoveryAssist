@@ -17,12 +17,14 @@ public partial class MainViewModel : ObservableObject
         _navigator = navigator;
 
         azureDb = new AzureDb();
+
+        GoAsk = new RelayCommand(async () => await GoAskCommand());
     }
 
-    //public ICommand GoToAdd<name> { get; } // get; is important
+    public ICommand GoAsk { get; }
 
-    //private async Task GoTo<name>() // This is using the code in App.xaml.cs function "RegisterRoutes"
-    //{
-    //    await _navigator.NavigateViewModelAsync<<name>ViewModel>(this);
-    //}
+    private async Task GoAskCommand()
+    {
+        await _navigator.NavigateViewModelAsync<AskViewModel>(this);
+    }
 }

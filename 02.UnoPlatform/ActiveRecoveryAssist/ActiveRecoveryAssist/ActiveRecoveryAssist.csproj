@@ -48,6 +48,7 @@
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">34.0</SupportedOSPlatformVersion>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Presentation\AskPage.xaml" />
     <None Remove="Presentation\HelpersPage.xaml" />
     <None Remove="Presentation\NewNovelPage.xaml" />
     <None Remove="Presentation\NovelWritingEditPage.xaml" />
@@ -108,6 +109,14 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="Presentation\NovelWritingEditPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Presentation\AskPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Presentation\AskPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
