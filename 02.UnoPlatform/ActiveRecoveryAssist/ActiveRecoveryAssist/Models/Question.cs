@@ -11,6 +11,7 @@ public class Question : Model
     public string? Answer { get; set; }
 
     // TODO: get device serial (or something) for uniqueness
+    // TODO: this might not be needed at all, was just an issue with my complex data types before
     public override void Insert()
     {
         var strQuery = "INSERT INTO Question (Device, Text, Answer) VALUES (@Device, @Text, @Answer);";
