@@ -1,0 +1,10 @@
+{
+  "background_color": "#ffffff",
+  "description": "ActiveRecoveryAssist",
+  "display": "standalone",
+  "name": "ActiveRecoveryAssist",
+  "short_name": "ActiveRecoveryAssist",
+  "start_url": "/index.html",
+  "theme_color": "#ffffff",
+  "scope": "/"
+}

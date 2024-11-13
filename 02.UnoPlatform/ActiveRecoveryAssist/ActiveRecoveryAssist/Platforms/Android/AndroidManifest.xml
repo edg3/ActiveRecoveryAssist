@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="za.co.edg3.activerecoveryassist" android:versionCode="1" android:versionName="alpha-1">
+	<application android:allowBackup="true" android:supportsRtl="true"></application>
+</manifest>
