@@ -1,0 +1,31 @@
+﻿<Page x:Class="ActiveRecoveryAssist.Presentation.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:ActiveRecoveryAssist.Presentation"
+      xmlns:uen="using:Uno.Extensions.Navigation.UI"
+      xmlns:utu="using:Uno.Toolkit.UI"
+      xmlns:um="using:Uno.Material"
+      NavigationCacheMode="Required"
+      Background="{ThemeResource BackgroundBrush}">
+  <ScrollViewer>
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition />
+      </Grid.RowDefinitions>
+
+      <StackPanel Grid.Row="1">
+        <TextBlock
+          Text="Active Recovery Assist"
+          FontSize="32"
+          FontWeight="Bold"
+          HorizontalAlignment="Center"
+          Margin="16" />
+        <TextBlock
+          Text="Hey there, hope you are doing well today. How can I be of assistance?"
+          TextWrapping="WrapWholeWords" />
+      </StackPanel>
+
+    </Grid>
+  </ScrollViewer>
+</Page>

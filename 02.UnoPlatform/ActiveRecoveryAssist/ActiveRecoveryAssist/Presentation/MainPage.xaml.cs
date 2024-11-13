@@ -1,4 +1,4 @@
-namespace ActiveRecoveryAssist;
+namespace ActiveRecoveryAssist.Presentation;
 
 public sealed partial class MainPage : Page
 {

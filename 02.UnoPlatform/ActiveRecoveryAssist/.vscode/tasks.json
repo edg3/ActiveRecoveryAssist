@@ -27,31 +27,5 @@
       ],
       "problemMatcher": "$msCompile"
     },
-    {
-      "label": "build-desktop",
-      "command": "dotnet",
-      "type": "process",
-      "args": [
-        "build",
-        "${workspaceFolder}/ActiveRecoveryAssist/ActiveRecoveryAssist.csproj",
-        "/property:GenerateFullPaths=true",
-        "/property:TargetFramework=net8.0-desktop",
-        "/consoleloggerparameters:NoSummary"
-      ],
-      "problemMatcher": "$msCompile"
-    },
-    {
-      "label": "publish-desktop",
-      "command": "dotnet",
-      "type": "process",
-      "args": [
-        "publish",
-        "${workspaceFolder}/ActiveRecoveryAssist/ActiveRecoveryAssist.csproj",
-        "/property:GenerateFullPaths=true",
-        "/property:TargetFramework=net8.0-desktop",
-        "/consoleloggerparameters:NoSummary"
-      ],
-      "problemMatcher": "$msCompile"
-    }
   ]
 }
