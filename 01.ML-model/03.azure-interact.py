@@ -1,6 +1,8 @@
 # Retrieved by copilot on Bing, prompt: python connect to azure database
 import pyodbc
 
+# When model is setup use: git update-index --skip-worktree
+# only THEN can put these details in, don't broadcast it to the world
 server = '<your_server>.database.windows.net'
 database = '<your_database>'
 username = '<your_username>'
