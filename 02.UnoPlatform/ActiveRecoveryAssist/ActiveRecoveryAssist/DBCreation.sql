@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS Question;
+
+CREATE TABLE Question (
+    QuestionID INT IDENTITY(1,1) PRIMARY KEY,
+    Device VARCHAR(1024) NOT NULL,
+    [Text] VARCHAR(1024) NOT NULL,
+    Answer VARCHAR(1024) NULL
+);

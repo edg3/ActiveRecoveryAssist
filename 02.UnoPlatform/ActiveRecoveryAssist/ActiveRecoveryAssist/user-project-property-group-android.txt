@@ -1,0 +1,10 @@
+latest background update messes this up. sigh, please stop background updating without my fucking concent. 
+ <PropertyGroup>
+    <IsFirstTimeProjectOpen>False</IsFirstTimeProjectOpen>
+    <ActiveDebugFramework>net8.0-android</ActiveDebugFramework>
+    <ActiveDebugProfile>Pixel 5 - API 34 (Android 14.0 - API 34)</ActiveDebugProfile>
+    <SelectedPlatformGroup>Emulator</SelectedPlatformGroup>
+    <_UnoSelectedTargetFramework>net8.0-android</_UnoSelectedTargetFramework>
+    <DefaultDevice>pixel_5_-_api_34</DefaultDevice>
+    <SelectedDevice>pixel_5_-_api_34</SelectedDevice>
+  </PropertyGroup>

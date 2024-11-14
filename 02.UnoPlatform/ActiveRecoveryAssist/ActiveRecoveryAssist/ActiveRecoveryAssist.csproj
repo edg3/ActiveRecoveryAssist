@@ -1,0 +1,124 @@
+<Project Sdk="Uno.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net8.0-android;net8.0-browserwasm;</TargetFrameworks>
+
+    <OutputType>Exe</OutputType>
+    <UnoSingleProject>true</UnoSingleProject>
+
+    <!-- Display name -->
+    <ApplicationTitle>ActiveRecoveryAssist</ApplicationTitle>
+    <!-- App Identifier -->
+    <ApplicationId>za.co.edg3.ActiveRecoveryAssist</ApplicationId>
+    <!-- Versions -->
+    <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+    <ApplicationVersion>1</ApplicationVersion>
+    <!-- Package Publisher -->
+    <ApplicationPublisher>Ernest Loveland</ApplicationPublisher>
+    <!-- Package Description -->
+    <Description>ActiveRecoveryAssist powered by Uno Platform.</Description>
+    <!--
+      If you encounter this error message:
+
+        error NETSDK1148: A referenced assembly was compiled using a newer version of Microsoft.Windows.SDK.NET.dll.
+        Please update to a newer .NET SDK in order to reference this assembly.
+
+      This means that the two packages below must be aligned with the "build" version number of
+      the "Microsoft.Windows.SDK.BuildTools" package above, and the "revision" version number
+      must be the highest found in https://www.nuget.org/packages/Microsoft.Windows.SDK.NET.Ref.
+    -->
+    <WindowsSdkPackageVersion>10.0.19041.38</WindowsSdkPackageVersion>
+
+    <!--
+      UnoFeatures let's you quickly add and manage implicit package references based on the features you want to use.
+      https://aka.platform.uno/singleproject-features
+    -->
+    <UnoFeatures>
+      Material;
+      Hosting;
+      Toolkit;
+      Logging;
+      Mvvm;
+      Configuration;
+      Http;
+      Serialization;
+      Localization;
+      Navigation;
+      ThemeService;
+    </UnoFeatures>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">34.0</SupportedOSPlatformVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Presentation\AskPage.xaml" />
+    <None Remove="Presentation\HelpersPage.xaml" />
+    <None Remove="Presentation\NewNovelPage.xaml" />
+    <None Remove="Presentation\NovelWritingEditPage.xaml" />
+    <None Remove="Presentation\NovelWritingPage.xaml" />
+    <None Remove="Presentation\TodayLogPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\Caching\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" />
+  </ItemGroup>
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Presentation\NewNovelPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Presentation\NewNovelPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Presentation\NovelWritingPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Presentation\NovelWritingPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Models\_Model.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Presentation\HelpersPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Presentation\HelpersPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Presentation\HelpersViewModel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Presentation\TodayLogPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Presentation\TodayLogPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Presentation\NovelWritingEditPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Presentation\NovelWritingEditPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Presentation\AskPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Presentation\AskPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+</Project>
