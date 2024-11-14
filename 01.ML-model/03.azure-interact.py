@@ -31,15 +31,21 @@ conn = pyodbc.connect(connection_string)
 import time
 while True: # TODO: consider a better way to handle this
     cursor = conn.cursor()
-    cursor.execute("SELECT TOP 1 [QuestionID],[Device],[Text],[Answer] FROM [dbo].[Question] WHERE Answer = '';")
-    for row in cursor.fetchall():
-        print('Received question:',row)
-        input_text = row[2]
-        input_ids = tokenizer(input_text, return_tensors='pt').input_ids.to(device)
-        generated_ids = model.generate(input_ids, max_length=1024)
-        generated_text = tokenizer.decode(generated_ids[0], skip_special_tokens=True)
-        print('Generated answer:',generated_text)
-        cursor.execute("UPDATE [dbo].[Question] SET Answer = ? WHERE QuestionID = ?",generated_text,row[0])  
+    try:
+        cursor.execute("SELECT TOP 1 [QuestionID],[Device],[Text],[Answer] FROM [dbo].[Question] WHERE Answer = '';")
+        for row in cursor.fetchall():
+            print('Received question:',row)
+            input_text = row[2]
+            input_ids = tokenizer(input_text, return_tensors='pt').input_ids.to(device)
+            generated_ids = model.generate(input_ids, max_length=1024)
+            generated_text = tokenizer.decode(generated_ids[0], skip_special_tokens=True)
+            print('Generated answer:',generated_text)
+            cursor.execute("UPDATE [dbo].[Question] SET Answer = ? WHERE QuestionID = ?",generated_text,row[0])
+            conn.commit()
+    except e:
+        print('Error:',e)
+    finally:
+        print('Saved response')
     cursor.close()
     time.sleep(30)
 
