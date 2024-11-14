@@ -3,13 +3,16 @@ import pyodbc
 
 # When model is setup use: git update-index --skip-worktree
 # only THEN can put these details in, don't broadcast it to the world
-server = '<your_server>.database.windows.net'
-database = '<your_database>'
-username = '<your_username>'
-password = '<your_password>'
+server = '.database.windows.net'
+database = 'ActiveRecoveryAssist'
+username = ''
+password = ""
 driver = '{ODBC Driver 17 for SQL Server}'
 
-connection_string = f'DRIVER={driver};SERVER={server};PORT=1433;DATABASE={database};UID={username};PWD={password}'
+connection_string = f'DRIVER={driver};SERVER=tcp:{server},1433;DATABASE={database};UID={username};PWD={password};Encrypted=yes;TrustServerCertificate=no;Connection Timeout=30;'
+
+# Connect
+conn = pyodbc.connect(connection_string)
 
 # Organise model we will use
 import os
@@ -23,9 +26,6 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 
 tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
 model = AutoModelForCausalLM.from_pretrained(MODEL_NAME).to(device)
-
-# Connect
-conn = pyodbc.connect(connection_string)
 
 # Get 1 question row
 import time
