@@ -31,7 +31,7 @@ conn = pyodbc.connect(connection_string)
 import time
 while True: # TODO: consider a better way to handle this
     cursor = conn.cursor()
-    cursor.execute("SELECT TOP 1 [QuestionID],[Device],[Text],[Answer] FROM [dbo].[Question] WHERE Answer IS NULL OR Answer = '';")
+    cursor.execute("SELECT TOP 1 [QuestionID],[Device],[Text],[Answer] FROM [dbo].[Question] WHERE Answer = '';")
     for row in cursor.fetchall():
         print('Received question:',row)
         input_text = row[2]
