@@ -6,4 +6,9 @@ public sealed partial class MainPage : Page
     {
         this.InitializeComponent();
     }
+
+    private void Button_Click(object sender, RoutedEventArgs e)
+    {
+        lstBroken.ItemsSource = MainViewModel.I!.Questions;
+    }
 }
