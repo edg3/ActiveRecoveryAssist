@@ -24,7 +24,7 @@ internal class AzureDb : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer($"Server=tcp:edg3.database.windows.net,1433;Initial Catalog=ActiveRecoveryAssist;Persist Security Info=False;User ID=edg3;Password=\"{AppConfig.DbPass}\";MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=60;MultipleActiveResultSets=True");
+        optionsBuilder.UseSqlServer($"Server=tcp:edg3.database.windows.net,1433;Initial Catalog=ActiveRecoveryAssist;Persist Security Info=False;User ID=Hackathon;Password=\"{AppConfig.DbPass}\";MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=60;MultipleActiveResultSets=True");
     }
 
     public DbSet<Question> Question { get; set; } // This adds the DB set for the named model

@@ -32,24 +32,26 @@
             <ColumnDefinition Width="64" />
           </Grid.ColumnDefinitions>
 
+          <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+          </Grid.RowDefinitions>
+
           <Button
             Content="Ask"
             Grid.Column="1"
             Command="{Binding GoAsk}" />
+
+          <Button
+            Content="Load"
+            Grid.Column="1"
+            Grid.Row="1"
+            Click="Button_Click" />
         </Grid>
         <ListBox
-          ItemsSource="{Binding Questions, Mode=OneWay}"
-          SelectedItem="{Binding SelectedQuestion, Mode=TwoWay}"
+          x:Name="lstBroken"
           SelectionMode="Single"
           Margin="16">
-          <ListBox.ItemTemplate>
-            <DataTemplate>
-              <TextBlock
-                Text="{Binding}"
-                TextWrapping="WrapWholeWords"
-                Margin="16" />
-            </DataTemplate>
-          </ListBox.ItemTemplate>
         </ListBox>
       </StackPanel>
 
